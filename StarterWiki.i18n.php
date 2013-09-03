@@ -21,3 +21,16 @@ $messages['qqq'] = array(
 	'starterwiki-desc' => '{{desc|name=Starter Wiki|https://www.mediawiki.org/wiki/Extension:StarterWiki}}',
 );
 
+/** German (Deutsch)
+ * @author Metalhead64
+ */
+$messages['de'] = array(
+	'starterwiki-desc' => 'Stellt einen Satz an Wartungsskripten und Funktionen bereit, die das Erstellen von Wikidatenbanken ermöglichen, basierend auf ein Starterwiki',
+);
+
+/** Ukrainian (українська)
+ * @author Andriykopanytsia
+ */
+$messages['uk'] = array(
+	'starterwiki-desc' => 'Надає набір сценаріїв обслуговування і функцій для створення баз даних вікі, заснованих на вікі для початківців',
+);
