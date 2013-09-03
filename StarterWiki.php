@@ -17,8 +17,11 @@ $wgExtensionCredits['other'][] = array(
 	'url' => 'https://www.mediawiki.org/wiki/Extension:StarterWiki',
 	'version' => '1.2a',
 	'author' => "[http://danf.ca/mw/ Daniel Friesen]",
-	'description' => "Provides a set of maintenance scripts and functions to allow for creation of wiki databases based off a starter wiki."
+	'descriptionmsg' => 'starterwiki-desc'
 );
+
+## i18n
+$wgExtensionMessagesFiles['StarterWiki'] = __DIR__ . '/StarterWiki.i18n.php';
 
 ## A list of pages to convert titles and override when cloning the database.
 ## Key is the ns:title on starter, value is the ns:title to use on the other wiki.
