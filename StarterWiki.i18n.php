@@ -36,6 +36,13 @@ $messages['de'] = array(
 	'starterwiki-desc' => 'Stellt einen Satz an Wartungsskripten und Funktionen bereit, die das Erstellen von Wikidatenbanken ermöglichen, basierend auf ein Starterwiki',
 );
 
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'starterwiki-desc' => "Proporciona un conjunto de ''scripts'' y funciones para permitir la creación de bases de datos de wikis basadas en un wiki inicial",
+);
+
 /** Galician (galego)
  * @author Toliño
  */
@@ -55,6 +62,13 @@ $messages['it'] = array(
  */
 $messages['mk'] = array(
 	'starterwiki-desc' => 'Дава збир скрипти и функции за одржување со кои овозможува создавање на викибази на податоци врз основа на почетно вики',
+);
+
+/** Brazilian Portuguese (português do Brasil)
+ * @author MisterSanderson
+ */
+$messages['pt-br'] = array(
+	'starterwiki-desc' => 'Provê um grupo de scripts de manutenção e funções para permitir a criação de bancos de dados baseados em uma starter wiki',
 );
 
 /** Ukrainian (українська)
