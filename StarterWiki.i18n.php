@@ -71,6 +71,13 @@ $messages['pt-br'] = array(
 	'starterwiki-desc' => 'Provê um grupo de scripts de manutenção e funções para permitir a criação de bancos de dados baseados em uma starter wiki',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'starterwiki-desc' => "Dèje 'nu 'nzieme de script e funziune de manutenzione pe ccrejà 'nu database de uicchi ca se basane sus a 'na uicchi de partenze",
+);
+
 /** Ukrainian (українська)
  * @author Andriykopanytsia
  */
