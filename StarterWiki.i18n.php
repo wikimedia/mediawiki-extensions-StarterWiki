@@ -43,6 +43,13 @@ $messages['es'] = array(
 	'starterwiki-desc' => "Proporciona un conjunto de ''scripts'' y funciones para permitir la creación de bases de datos de wikis basadas en un wiki inicial",
 );
 
+/** French (français)
+ * @author Gomoko
+ */
+$messages['fr'] = array(
+	'starterwiki-desc' => 'Fournit un ensemble de scripts de maintenance et de fonctions pour permettre la création de bases de données de wiki basées sur un wiki de départ',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
