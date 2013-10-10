@@ -85,6 +85,13 @@ $messages['roa-tara'] = array(
 	'starterwiki-desc' => "Dèje 'nu 'nzieme de script e funziune de manutenzione pe ccrejà 'nu database de uicchi ca se basane sus a 'na uicchi de partenze",
 );
 
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'starterwiki-desc' => 'Предоставляет набор обслуживающих скриптов и функций для создания баз данных вики-проекта на основе стартового вики-проекта',
+);
+
 /** Ukrainian (українська)
  * @author Andriykopanytsia
  */
