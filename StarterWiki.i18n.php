@@ -64,6 +64,13 @@ $messages['it'] = array(
 	'starterwiki-desc' => 'Fornisce un insieme di script e funzioni per consentire la creazione di database per wiki basati su un wiki di avviamento',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'starterwiki-desc' => 'Brängg_ene Saz vun Skrepte un Funxjohne, öm Wiki Daatebangke aanlääje ze künne, wat vun enem Aanfangswikki ußjeihd.',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
