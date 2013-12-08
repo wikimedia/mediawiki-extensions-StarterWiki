@@ -78,6 +78,13 @@ $messages['mk'] = array(
 	'starterwiki-desc' => 'Дава збир скрипти и функции за одржување со кои овозможува создавање на викибази на податоци врз основа на почетно вики',
 );
 
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'starterwiki-desc' => "Biedt een verzameling onderhoudsscripts en functies om het aanmaken van databases voor wiki's mogelijk te maken op basis van een beginwiki",
+);
+
 /** Brazilian Portuguese (português do Brasil)
  * @author MisterSanderson
  */
