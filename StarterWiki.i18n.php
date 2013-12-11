@@ -112,3 +112,10 @@ $messages['ru'] = array(
 $messages['uk'] = array(
 	'starterwiki-desc' => 'Надає набір сценаріїв обслуговування і функцій для створення баз даних вікі, заснованих на вікі для початківців',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'starterwiki-desc' => '提供一套维护脚本和功能，帮助wiki初学者进行初始数据库的创建',
+);
