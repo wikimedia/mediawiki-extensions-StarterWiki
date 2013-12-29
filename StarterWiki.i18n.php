@@ -36,6 +36,13 @@ $messages['de'] = array(
 	'starterwiki-desc' => 'Stellt einen Satz an Wartungsskripten und Funktionen bereit, die das Erstellen von Wikidatenbanken ermöglichen, basierend auf ein Starterwiki',
 );
 
+/** Lower Sorbian (dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'starterwiki-desc' => 'Staja sajźbu wótwarowańskich skriptow a funkcijow za napóranje wikijowych datowych bankow na zakłaźe startowańskego wikija k dispoziciji',
+);
+
 /** Spanish (español)
  * @author Fitoschido
  */
@@ -55,6 +62,13 @@ $messages['fr'] = array(
  */
 $messages['gl'] = array(
 	'starterwiki-desc' => 'Proporciona un conxunto de escrituras e funcións de mantemento que permiten a creación de bases de datos dun wiki baseadas nun wiki de arranque',
+);
+
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'starterwiki-desc' => 'Staja sadźbu wothladowanskich skriptow a funkcijow za wutworjenje wikijowych datowych bankow na zakładźe startowanskeho wikija k dispoziciji',
 );
 
 /** Italian (italiano)
