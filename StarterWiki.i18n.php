@@ -78,6 +78,13 @@ $messages['it'] = array(
 	'starterwiki-desc' => 'Fornisce un insieme di script e funzioni per consentire la creazione di database per wiki basati su un wiki di avviamento',
 );
 
+/** Korean (한국어)
+ * @author Priviet
+ */
+$messages['ko'] = array(
+	'starterwiki-desc' => '유지 관리 스크립트 집합과 스타터 위키 기반 위키 데이터베이스 생성을 허용하는 함수를 제공',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
