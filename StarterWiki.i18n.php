@@ -50,6 +50,13 @@ $messages['es'] = array(
 	'starterwiki-desc' => "Proporciona un conjunto de ''scripts'' y funciones para permitir la creación de bases de datos de wikis basadas en un wiki inicial",
 );
 
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'starterwiki-desc' => 'ارائه مجموعه‌ی متن‌های نگهداری و عملیات به اجازه برای ایجاد پایگاه اطلاعاتی ویکی مبنای ویکی اغازگر',
+);
+
 /** French (français)
  * @author Gomoko
  */
