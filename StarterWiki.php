@@ -15,12 +15,13 @@ $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'StarterWiki',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:StarterWiki',
-	'version' => '1.2a',
+	'version' => '1.3.0',
 	'author' => "[http://danf.ca/mw/ Daniel Friesen]",
 	'descriptionmsg' => 'starterwiki-desc'
 );
 
 ## i18n
+$wgMessagesDirs['StarterWiki'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['StarterWiki'] = __DIR__ . '/StarterWiki.i18n.php';
 
 ## A list of pages to convert titles and override when cloning the database.
