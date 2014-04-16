@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Metalhead64"
-        ]
-    },
-    "starterwiki-desc": "Stellt einen Satz an Wartungsskripten und Funktionen bereit, die das Erstellen von Wikidatenbanken ermöglichen, basierend auf ein Starterwiki"
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"starterwiki-desc": "Stellt einen Satz an Wartungsskripten und Funktionen bereit, die das Erstellen von Wikidatenbanken ermöglichen, basierend auf ein Starterwiki"
 }

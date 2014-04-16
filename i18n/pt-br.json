@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "MisterSanderson"
-        ]
-    },
-    "starterwiki-desc": "Provê um grupo de scripts de manutenção e funções para permitir a criação de bancos de dados baseados em uma starter wiki"
+	"@metadata": {
+		"authors": [
+			"MisterSanderson"
+		]
+	},
+	"starterwiki-desc": "Provê um grupo de scripts de manutenção e funções para permitir a criação de bancos de dados baseados em uma starter wiki"
 }

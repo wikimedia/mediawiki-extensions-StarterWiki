@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Daniel Friesen",
-            "Shirayuki"
-        ]
-    },
-    "starterwiki-desc": "{{desc|name=Starter Wiki|url=http://www.mediawiki.org/wiki/Extension:StarterWiki}}"
+	"@metadata": {
+		"authors": [
+			"Daniel Friesen",
+			"Shirayuki"
+		]
+	},
+	"starterwiki-desc": "{{desc|name=Starter Wiki|url=http://www.mediawiki.org/wiki/Extension:StarterWiki}}"
 }
