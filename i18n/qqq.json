@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Daniel Friesen",
-			"Shirayuki"
+			"Shirayuki",
+			"Umherirrender"
 		]
 	},
-	"starterwiki-desc": "{{desc|name=Starter Wiki|url=http://www.mediawiki.org/wiki/Extension:StarterWiki}}"
+	"starterwiki-desc": "{{desc|name=Starter Wiki|url=https://www.mediawiki.org/wiki/Extension:StarterWiki}}"
 }
