@@ -36,8 +36,8 @@ $wgStarterWikiOmitNamespaces = array(
 	NS_USER, # Don't clone userpages, users may not be the same.
 	NS_USER_TALK, # Don't clone talkpages, discussions shouldn't be cloned.
 	NS_PROJECT_TALK, # Don't clone talkpages, discussions shouldn't be cloned.
-	NS_IMAGE, # Don't clone image pages, files are not cloned.
-	NS_IMAGE_TALK, # Don't clone talkpages, discussions shouldn't be cloned.
+	NS_FILE, # Don't clone image pages, files are not cloned.
+	NS_FILE_TALK, # Don't clone talkpages, discussions shouldn't be cloned.
 	NS_MEDIAWIKI, # Don't clone messages, a shared system should be used
 	NS_MEDIAWIKI_TALK, # Don't clone talkpages, discussions shouldn't be cloned.
 	NS_TEMPLATE_TALK, # Don't clone talkpages, discussions shouldn't be cloned.
