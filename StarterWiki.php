@@ -22,7 +22,6 @@ $wgExtensionCredits['other'][] = array(
 
 ## i18n
 $wgMessagesDirs['StarterWiki'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['StarterWiki'] = __DIR__ . '/StarterWiki.i18n.php';
 
 ## A list of pages to convert titles and override when cloning the database.
 ## Key is the ns:title on starter, value is the ns:title to use on the other wiki.
