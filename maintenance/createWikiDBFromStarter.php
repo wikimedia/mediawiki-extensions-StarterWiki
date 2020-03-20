@@ -3,7 +3,7 @@
  * StarterWiki
  *
  * @author Daniel Friesen (https://mediawiki.org/wiki/User:Dantman) <mediawiki@danielfriesen.name>
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL-2.0-or-later
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -24,9 +24,9 @@
  * Use the current wiki database (starter) as a base for creating a new one.
  */
 
-$optionsWithArgs = array( 'database' );
+$optionsWithArgs = [ 'database' ];
 $wgUseMasterForMaintenance = true;
-require_once( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) . '/maintenance/commandLine.inc' );
+require_once dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/commandLine.inc';
 $wgTitle = Title::newFromText( "StarterWiki Database Creator" );
 
 function usageInfo() {
@@ -44,7 +44,9 @@ TEXT;
 
 function tryRunCreate( $db ) {
 	global $options;
-	if ( isset( $options['help'] ) || !isset( $options['database'] ) ) usageInfo();
+	if ( isset( $options['help'] ) || !isset( $options['database'] ) ) {
+		usageInfo();
+	}
 	if ( doCreateWiki( $db, $options['database'] ) ) {
 		echo "Finished...\n";
 		exit( 0 );
@@ -58,10 +60,10 @@ function doCreateWiki( $db, $newDB ) {
 	global $wgDBname, $wgStarterWikiPageAliases, $wgStarterWikiOmitNamespaces;
 	// Create the new Database, and make sure to use the same character set and collation as this one.
 	$dbData = $db->selectRow( '`INFORMATION_SCHEMA`.`SCHEMATA`',
-		array( "DEFAULT_CHARACTER_SET_NAME AS 'character_set'", "DEFAULT_COLLATION_NAME AS 'collation'" ),
-		array( 'SCHEMA_NAME' => $wgDBname ), __METHOD__ );
+		[ "DEFAULT_CHARACTER_SET_NAME AS 'character_set'", "DEFAULT_COLLATION_NAME AS 'collation'" ],
+		[ 'SCHEMA_NAME' => $wgDBname ], __METHOD__ );
 
-	if ( (bool) $db->query( "CREATE DATABASE `{$newDB}` CHARACTER SET {$dbData->character_set} COLLATE {$dbData->collation}" ) ) {
+	if ( (bool)$db->query( "CREATE DATABASE `{$newDB}` CHARACTER SET {$dbData->character_set} COLLATE {$dbData->collation}" ) ) {
 		echo "New database created\n";
 	} else {
 		echo "Could not create the database, it may already exist.\n";
@@ -72,7 +74,7 @@ function doCreateWiki( $db, $newDB ) {
 	$res = $db->query( "SHOW TABLES FROM `{$wgDBname}`" );
 	while ( $row = $db->fetchRow( $res ) ) {
 		$table = $row["Tables_in_{$wgDBname}"];
-		if ( (bool) $db->query( "CREATE TABLE `{$newDB}`.`{$table}` LIKE `{$wgDBname}`.`{$table}`" ) ) {
+		if ( (bool)$db->query( "CREATE TABLE `{$newDB}`.`{$table}` LIKE `{$wgDBname}`.`{$table}`" ) ) {
 			echo "Cloned structure for table `{$table}` from starter.\n";
 		} else {
 			echo "Failed to clone structure for table `{$table}` from starter.\n";
@@ -116,15 +118,17 @@ ORDER BY rev_id DESC" );
 
 	while ( $row = $db->fetchObject( $res ) ) {
 		// Don't copy overrided pages.
-		if ( in_array( "{$row->namespace}:{$row->title}", $wgStarterWikiPageAliases ) ) continue;
+		if ( in_array( "{$row->namespace}:{$row->title}", $wgStarterWikiPageAliases ) ) {
+			continue;
+		}
 
 		// Insert Text Data into the Database.
 		$oldId = $db->nextSequenceValue( 'text_old_id_seq' );
-		$db->insert( "`{$newDB}`.`text`", array(
+		$db->insert( "`{$newDB}`.`text`", [
 			'old_id'    => $oldId,
 			'old_text'  => $row->text,
 			'old_flags' => $row->flags
-		) );
+		] );
 		$oldId = $db->insertId();
 		if ( $db->affectedRows() > 0 ) {
 			echo "Inserted text data for {$row->namespace}:{$row->title}\n";
@@ -134,7 +138,7 @@ ORDER BY rev_id DESC" );
 		}
 		// Insert Revision Data into the Database.
 		$revId = $db->nextSequenceValue( 'revision_rev_id_seq' );
-		$db->insert( "`{$newDB}`.`revision`", array(
+		$db->insert( "`{$newDB}`.`revision`", [
 				'rev_id'        => $revId,
 				'rev_text_id'   => $oldId,
 				'rev_comment'   => $row->comment,
@@ -142,7 +146,7 @@ ORDER BY rev_id DESC" );
 				'rev_user_text' => "MediaWiki default",
 				'rev_timestamp' => $now,
 				'rev_len'       => $row->length
-			) );
+			] );
 		$revId = $db->insertId();
 		if ( $db->affectedRows() > 0 ) {
 			echo "Created initial revision for {$row->namespace}:{$row->title}\n";
@@ -154,10 +158,10 @@ ORDER BY rev_id DESC" );
 		$pageId = $db->nextSequenceValue( 'page_page_id_seq' );
 		$alias = null;
 		if ( isset( $wgStarterWikiPageAliases["{$row->namespace}:{$row->title}"] ) ) {
-			$alias = array();
+			$alias = [];
 			list( $alias['namespace'], $alias['title'] ) = explode( ':', $wgStarterWikiPageAliases["{$row->namespace}:{$row->title}"], 2 );
 		}
-		$db->insert( "`{$newDB}`.`page`", array(
+		$db->insert( "`{$newDB}`.`page`", [
 				'page_id'           => $pageId,
 				'page_namespace'    => isset( $alias ) ? $alias['namespace'] : $row->namespace,
 				'page_title'        => isset( $alias ) ? $alias['title'] : $row->title,
@@ -166,7 +170,7 @@ ORDER BY rev_id DESC" );
 				'page_touched'      => $now,
 				'page_latest'       => $revId,
 				'page_len'          => $row->length
-			) );
+			] );
 		$pageId = $db->insertId();
 		if ( $db->affectedRows() > 0 ) {
 			echo "Inserted page row for {$row->namespace}:[]$row->title}\n";
