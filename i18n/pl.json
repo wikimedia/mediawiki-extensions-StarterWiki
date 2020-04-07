@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Railfail536",
-			"Rail"
+			"Rail",
+			"Railfail536"
 		]
 	},
 	"starterwiki-desc": "Dodaje zestaw skryptów konserwacyjnych oraz funkcji umożliwiających tworzenie wiki w oparciu o bazy danych wiki startowej"
