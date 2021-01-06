@@ -1,4 +1,8 @@
 <?php
+
+// phpcs:disable MediaWiki.NamingConventions.PrefixedGlobalFunctions.wfPrefix
+// phpcs:disable MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
+
 /**
  * StarterWiki
  *
@@ -42,6 +46,9 @@ TEXT;
 	exit( 0 );
 }
 
+/**
+ * @param \Wikimedia\Rdbms\IDatabase $db
+ */
 function tryRunCreate( $db ) {
 	global $options;
 	if ( isset( $options['help'] ) || !isset( $options['database'] ) ) {
@@ -56,6 +63,11 @@ function tryRunCreate( $db ) {
 	}
 }
 
+/**
+ * @param \Wikimedia\Rdbms\IDatabase $db
+ * @param string $newDB
+ * @return bool
+ */
 function doCreateWiki( $db, $newDB ) {
 	global $wgDBname, $wgStarterWikiPageAliases, $wgStarterWikiOmitNamespaces;
 	// Create the new Database, and make sure to use the same character set and collation as this one.
@@ -63,7 +75,9 @@ function doCreateWiki( $db, $newDB ) {
 		[ "DEFAULT_CHARACTER_SET_NAME AS 'character_set'", "DEFAULT_COLLATION_NAME AS 'collation'" ],
 		[ 'SCHEMA_NAME' => $wgDBname ], __METHOD__ );
 
-	if ( (bool)$db->query( "CREATE DATABASE `{$newDB}` CHARACTER SET {$dbData->character_set} COLLATE {$dbData->collation}" ) ) {
+	if ( (bool)$db->query(
+		"CREATE DATABASE `{$newDB}` CHARACTER SET {$dbData->character_set} COLLATE {$dbData->collation}" )
+	) {
 		echo "New database created\n";
 	} else {
 		echo "Could not create the database, it may already exist.\n";
@@ -72,6 +86,7 @@ function doCreateWiki( $db, $newDB ) {
 
 	// Copy the structure of all the Starter tables to the new wiki.
 	$res = $db->query( "SHOW TABLES FROM `{$wgDBname}`" );
+	// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 	while ( $row = $db->fetchRow( $res ) ) {
 		$table = $row["Tables_in_{$wgDBname}"];
 		if ( (bool)$db->query( "CREATE TABLE `{$newDB}`.`{$table}` LIKE `{$wgDBname}`.`{$table}`" ) ) {
@@ -116,6 +131,7 @@ WHERE
 GROUP BY page_id ASC
 ORDER BY rev_id DESC" );
 
+	// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 	while ( $row = $db->fetchObject( $res ) ) {
 		// Don't copy overrided pages.
 		if ( in_array( "{$row->namespace}:{$row->title}", $wgStarterWikiPageAliases ) ) {
@@ -159,7 +175,8 @@ ORDER BY rev_id DESC" );
 		$alias = null;
 		if ( isset( $wgStarterWikiPageAliases["{$row->namespace}:{$row->title}"] ) ) {
 			$alias = [];
-			list( $alias['namespace'], $alias['title'] ) = explode( ':', $wgStarterWikiPageAliases["{$row->namespace}:{$row->title}"], 2 );
+			list( $alias['namespace'], $alias['title'] ) =
+				explode( ':', $wgStarterWikiPageAliases["{$row->namespace}:{$row->title}"], 2 );
 		}
 		$db->insert( "`{$newDB}`.`page`", [
 				'page_id'           => $pageId,
